@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-let count = process.argv.length - 2;
+const count = process.argv.length - 2;
 
 if (count === 0)
 {
