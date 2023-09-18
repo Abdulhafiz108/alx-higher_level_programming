@@ -15,9 +15,10 @@ if __name__ == "__main__":
     )
     mycur = mydb.cursor()
     mycur.execute(
-            "SELECT * FROM states"
-            "WHERE name LIKE BINARY '{}'".format(argv[4])
-            "ORDER BY states.id ASC;"
+            """
+            SELECT * FROM states WHERE name LIKE BINARY '{}'
+            ORDER BY states.id ASC;
+            """.format(argv[4])
     )
     my_data = mycur.fetchall()
     for i in my_data:
