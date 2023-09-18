@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all states from the database
+Lists all states starting with capital N in the database
 """
 if __name__ == "__main__":
     import MySQLdb
@@ -14,7 +14,7 @@ if __name__ == "__main__":
             port=3306
     )
     mycur = mydb.cursor()
-    mycur.execute("SELECT * FROM states ORDER BY states.id ASC;")
+    mycur.execute("SELECT * FROM states WHERE states like N%;")
     my_data = mycur.fetchall()
     for i in my_data:
         print(i)
