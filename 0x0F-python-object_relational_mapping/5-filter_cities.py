@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Displays all values where name matches argument
+Lists all cities of the argument
 """
 if __name__ == "__main__":
     import MySQLdb
