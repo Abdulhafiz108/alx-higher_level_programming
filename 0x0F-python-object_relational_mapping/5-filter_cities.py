@@ -23,12 +23,8 @@ if __name__ == "__main__":
             """
     )
     my_data = mycur.fetchall()
-    j = 0
-    for i in my_data:
-        if i[4] == argv[4]:
-            if j != 0:
-                print(", ")
-            print(i[2])
-            j = 1
+    print(", ".join([city[2]
+                    for city in my_data
+                    if city[4] == argv[4]]))
     mycur.close()
     mydb.close()
