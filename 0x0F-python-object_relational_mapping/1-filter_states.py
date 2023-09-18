@@ -14,7 +14,7 @@ if __name__ == "__main__":
             port=3306
     )
     mycur = mydb.cursor()
-    mycur.execute("SELECT * FROM states WHERE states like N%;")
+    mycur.execute("SELECT * FROM states WHERE state LIKE 'N%' ORDER BY states.id ASC;")
     my_data = mycur.fetchall()
     for i in my_data:
         print(i)
