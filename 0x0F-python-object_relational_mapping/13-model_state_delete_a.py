@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     states = my_session.query(State).all()
     for state in states:
-        if "a" in state.name:
+        if "a" in state.name.lower():
             my_session.delete(state)
 
     my_session.commit()
