@@ -15,10 +15,9 @@ if __name__ == "__main__":
     session_maker = sessionmaker(bind=engine)
     my_session = session_maker()
 
-    states = my_session.query(State).all()
+    states = my_session.query(State).filter(State.name.like('%a%')).all()
     for state in states:
-        if "a" in state.name.lower():
-            my_session.delete(state)
+        my_session.delete(state)
 
     my_session.commit()
 
